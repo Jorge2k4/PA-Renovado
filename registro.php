@@ -51,28 +51,33 @@
         </form>
 
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          
-            include("conexion.php");
+session_start();
 
-            $usuario = $_POST['usuario'];
-            $contraseña = $_POST['contraseña'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include("conexion.php");
 
-            $consulta = "SELECT * FROM registro_datos WHERE usuario='$usuario' AND contraseña='$contraseña'";
-            $resultado = mysqli_query($conex, $consulta);
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
 
-           
-            if (mysqli_num_rows($resultado) == 1) {
-                
-                header("Location: index.html");
-                exit(); 
-            } else {
-               
-                echo "<script>alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');</script>";
-            }
+    $consulta = "SELECT * FROM registro_datos WHERE usuario='$usuario'";
+    $resultado = mysqli_query($conex, $consulta);
+
+    if (mysqli_num_rows($resultado) == 1) {
+        $fila = mysqli_fetch_assoc($resultado);
+        $contraseña_hash = $fila['contraseña'];
+
+        if (password_verify($contraseña, $contraseña_hash)) {
+            // Establecer variables de sesión
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['email'] = $fila['email'];
+            
+            header("Location: index.php");
+            exit();
+        } else {
+            echo "<script>alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');</script>";
         }
-        ?>
-    </main>
-</body>
-
-</html>
+    } else {
+        echo "<script>alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');</script>";
+    }
+}
+?>

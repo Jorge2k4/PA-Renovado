@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
 
+    if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
+        // Si hay una sesión activa, mostrar el nombre de usuario y el email
+        $usuario = $_SESSION['usuario'];
+        $email = $_SESSION['email'];
+    ?>
+    <?php
+    } else {
+        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
+        echo "<a href='registro.php'>Iniciar Sesión</a>";
+    }
+    ?>
 <head>
     <meta charset="utf-8">
     <title>Marina Express</title>
@@ -57,8 +70,8 @@
     <!-- Topbar End -->
 
 
-<!-- Navbar Start -->
-<div class="container-fluid position-relative nav-bar p-0">
+ <!-- Navbar Start -->
+ <div class="container-fluid position-relative nav-bar p-0">
     <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
             <a href="" class="navbar-brand">
@@ -69,13 +82,33 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                    <a href="sobre_nosotros.html" class="nav-item nav-link">Sobre Nosotros</a>
-                    <a href="comprar_ticket.html" class="nav-item nav-link">Comprar Ticket</a>
-                    <a href="contactanos.html" class="nav-item nav-link">Contactanos</a>
-                    <a href="registro.php" class="nav-item nav-link">Cerrar Sesion</a>
+                    <a href="index.php" class="nav-item nav-link active">Inicio</a>
+                    <a href="sobre_nosotros.php" class="nav-item nav-link">Sobre Nosotros</a>
+                    <a href="comprar_ticket.php" class="nav-item nav-link">Comprar Ticket</a>
+                    <a href="contactanos.php" class="nav-item nav-link">Contactanos</a>
+                    <?php
+                    if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
+                        $usuario = $_SESSION['usuario'];
+                        $email = $_SESSION['email'];
+                    ?>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php echo $usuario[0]; ?> <!-- Muestra la inicial del nombre de usuario -->
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
+                            <a class="dropdown-item" href="#">Ver Reservas</a>
+                        </div>
+                    </div>
+                    <?php
+                    } else {
+                    ?>
+                    <a href="registro.php" class="nav-item nav-link">Iniciar Sesión</a>
+                    <?php
+                    }
+                    ?>
                 </div>
-            </div>
+            </div> 
         </nav>
     </div>
 </div>
@@ -287,23 +320,23 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="sobre_nosotros.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
-                    <a class="text-white-50" href="index.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                    <a class="text-white-50 mb-2" href="sobre_nosotros.php"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
+                    <a class="text-white-50" href="index.php"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="sobre_nosotros.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
-                    <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
-                    <a class="text-white-50" href="index.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                    <a class="text-white-50 mb-2" href="sobre_nosotros.php"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
+                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
+                    <a class="text-white-50" href="index.php"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

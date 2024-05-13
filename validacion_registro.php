@@ -11,14 +11,17 @@ if (isset($_POST['registrarse'])) {
         $contraseña = trim($_POST['contraseña']);
         $email = trim($_POST['email']);
         $fecha = date("d/m/y");
-        $consulta = "INSERT INTO registro_datos(usuario, contraseña,email, fecha) 
-        VALUES ('$usuario', '$contraseña', '$email','$fecha')";
+        
+        // Cifra la contraseña
+        $contraseña_cifrada = password_hash($contraseña, PASSWORD_DEFAULT);
+        
+        // Prepara la consulta con la contraseña cifrada
+        $consulta = "INSERT INTO registro_datos(usuario, contraseña, email, fecha) 
+        VALUES ('$usuario', '$contraseña_cifrada', '$email', '$fecha')";
         $resultado = mysqli_query($conex, $consulta);
-
 
         if ($resultado) {
 ?>
-            <h3 class="success">Tu registro se ha completado</h3>
             <script>
                 setTimeout(function() {
                     alert("Tu registro se ha completado");
