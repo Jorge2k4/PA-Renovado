@@ -25,29 +25,46 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+
+
 <body>
-    <form method= "post" >
-        <div class="logo">
-            <img src="imagenes/Logo_Marina_Express-removebg.png" alt="">
+<!-- Registration Start -->
+<div class="container-fluid bg-registration py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="card border-0">
+                            <div class="card-header bg-primary text-center p-4">
+                                <h1 class="text-white m-0">Crear nueva cuenta</h1>
+                            </div>
+                            <div class="card-body rounded-bottom bg-white p-5">
+                                <form method="post">
+                                <div class="form-group">
+                                    <label for="usuario" class="form-label">Usuario:</label>
+                                    <input type="text" class="form-control p-3" id="usuario" name="usuario"> 
+                                </div>
+                                    <div class="form-group">
+                                        <label for="contraseña" class="form-label">Contraseña:</label>
+                                        <input type="password" class="form-control p-3" id="contraseña" name="contraseña">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email:</label>
+                                        <input type="text" class="form-control p-3" id="email" name="email">
+                                        </div>
+                                    <div>
+                                        <br>
+                                        <input class="btn btn-primary btn-block py-3" type="submit" class="btn" name="registrarse" value="Crear cuenta">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <center>
-                <h2>Crear nueva cuenta</h2>
-            </center>
-            <div class="mb-3 mt-3">
-                <label for="usuario" class="form-label">Usuario:</label>
-                <input type="text" class="form-control" id="usuario" placeholder="usuario" name="usuario"> 
-            </div>
-            <div class="mb-3">
-                <label for="contraseña" class="form-label">contraseña:</label>
-                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="email" name="email">
-            </div>
-                <input type="submit" class="btn" name="registrarse" value="Crear cuenta">
-    </form>
+<!-- Registration End -->
+
+
     <?PHP
         include ("validacion_registro.php");
     ?> 

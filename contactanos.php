@@ -48,7 +48,7 @@
                     <div class="d-inline-flex align-items-center">
                         <p><i class="fa fa-envelope mr-2"></i>marinaexpressoficial@gmail.com</p>
                         <p class="text-body px-3">|</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3146493161</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3016533646</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
@@ -71,47 +71,47 @@
 
 
   <!-- Navbar Start -->
-<div class="container-fluid position-relative nav-bar p-0">
-    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="" class="navbar-brand">
-                <h1 class="m-0 text-primary"><span class="text-dark">MARINA</span>EXPRESS</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0">
-                    <a href="index.php" class="nav-item nav-link active">Inicio</a>
-                    <a href="sobre_nosotros.php" class="nav-item nav-link">Sobre Nosotros</a>
-                    <a href="comprar_ticket.php" class="nav-item nav-link">Comprar Ticket</a>
-                    <a href="contactanos.php" class="nav-item nav-link">Contactanos</a>
-                    <?php
-                    if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
-                        $usuario = $_SESSION['usuario'];
-                        $email = $_SESSION['email'];
-                    ?>
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?php echo $usuario[0]; ?> <!-- Muestra la inicial del nombre de usuario -->
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                            <a class="dropdown-item" href="#">Ver Reservas</a>
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">MARINA</span>EXPRESS</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.php" class="nav-item nav-link active">Inicio</a>
+                        <a href="sobre_nosotros.php" class="nav-item nav-link">Sobre Nosotros</a>
+                        <a href="comprar_ticket.php" class="nav-item nav-link">Comprar Ticket</a>
+                        <a href="contactanos.php" class="nav-item nav-link">Contactanos</a>
+                        <?php
+                        if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
+                            $usuario = $_SESSION['usuario'];
+                            $email = $_SESSION['email'];
+                        ?>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $usuario[0]; ?> <!-- Muestra la inicial del nombre de usuario -->
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
+                                <a class="dropdown-item" href="#">Ver Reservas</a>
+                            </div>
                         </div>
+                        <?php
+                        } else {
+                        ?>
+                        <a href="registro.php" class="nav-item nav-link">Iniciar Sesión</a>
+                        <?php
+                        }
+                        ?>
                     </div>
-                    <?php
-                    } else {
-                    ?>
-                    <a href="registro.php" class="nav-item nav-link">Iniciar Sesión</a>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div> 
-        </nav>
+                </div> 
+            </nav>
+        </div>
     </div>
-</div>
 <!-- Navbar End -->
 
     <!-- Header Start -->
@@ -142,28 +142,31 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-white" style="padding: 30px;">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate" action="enviar_correo.php" method="post">
                             <div class="form-row">
+                                <!-- AQUI VA EL NOMBRE DE LA PERSONA -->
                                 <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Nombre"
-                                        required="required" data-validation-required-message="Por favor ingrese su nombre" />
+                                    <input type="text" class="form-control p-4" id="name" name="nombre" placeholder="Nombre"
+                                        required/>
                                     <p class="help-block text-danger"></p>
                                 </div>
+                                <!-- AQUI VA EL CORREO DE LA PERSONA -->
                                 <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Correo"
-                                        required="required" data-validation-required-message="Por favor ingrese su correo" />
+                                    <input type="email" class="form-control p-4" id="correo" name="correo" placeholder="Correo"
+                                        required/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Encabezado"
-                                    required="required" data-validation-required-message="Por favor ingrese el encabezado" />
+                                <!-- AQUI VA EL ASUNTO DE LA PERSONA -->
+                                <input type="text" class="form-control p-4" id="asunto" name="asunto" placeholder="Asunto"
+                                    required/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Mensaje"
-                                    required="required"
-                                    data-validation-required-message="Por favor ingrese su mensaje"></textarea>
+                                <!-- AQUI VA EL MENSAJE DE LA PERSONA -->
+                                <textarea class="form-control py-3 px-4" rows="5" id="message" name="msg" placeholder="Mensaje"
+                                    required></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">

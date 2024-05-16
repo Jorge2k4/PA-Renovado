@@ -27,28 +27,39 @@
 </head>
 
 <body>
-    <main>
-        <form method="post">
-            <div class="logo">
-                <img src="imagenes/Logo_Marina_Express-removebg.png" alt="">
-            </div>
-            <div class="mb-3">
-                <center>
-                    <h2>Iniciar Sesión</h2>
-                </center>
-                <div class="mb-3 mt-3">
-                    <label for="usuario" class="form-label">Usuario:</label>
-                    <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usuario">
+<!-- Registration Start -->
+<div class="container-fluid bg-registration py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="card border-0">
+                            <div class="card-header bg-primary text-center p-4">
+                                <h1 class="text-white m-0">Iniciar Sesion</h1>
+                            </div>
+                            <div class="card-body rounded-bottom bg-white p-5">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label for="usuario" class="form-label">Usuario:</label>
+                                        <input type="text" class="form-control p-3" id="usuario" name="usuario" placeholder="Usuario"> 
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contraseña" class="form-label">Contraseña:</label>
+                                        <input type="password" class="form-control p-3" id="contraseña" name="contraseña" placeholder="Contraseña">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <input class="btn btn-primary btn-block py-3" type="submit" class="btn" name="ingresar" value="Ingresar">
+                                        <a href="crear_cuenta.php" class="btn btn-primary btn-block py-2">Crear nueva cuenta</a>
+                                        <a href="invitado.html" class="btn btn-primary btn-block py-2">Ingresar como invitado</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña">
-                </div>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-                <a href="crear_cuenta.php" class="btn btn-primary">Crear nueva cuenta</a>
-                <a href="invitado.html" class="btn btn-primary">Ingresar como invitado</a>
             </div>
-        </form>
+        </div>
+<!-- Registration End -->
 
         <?php
 session_start();
