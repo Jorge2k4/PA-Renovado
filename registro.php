@@ -81,10 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario'] = $usuario;
             $_SESSION['email'] = $fila['email'];
             
-            // Obtener el rol del usuario
             $rol = $fila['rol'];
-
-            // Redirigir dependiendo del rol
             if ($rol == 'admin') {
                 header("Location: index_admin.php");
             } else {

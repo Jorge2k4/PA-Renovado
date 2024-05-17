@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) == 0) {
 $row = mysqli_fetch_assoc($result);
 $token = $row['codigo_qr'];
 $fecha_creacion = $row['fecha_creacion'];
-$usuario = $row['usuario']; // Nuevo: Obtener el usuario asociado a la reserva
+$usuario = $row['usuario']; 
 $email= $row['email'];
 ?>
 
@@ -31,8 +31,8 @@ $email= $row['email'];
 <body>
     <h1>Detalles del Código QR</h1>
     <p>ID de Reserva: <?php echo $id_reserva; ?></p>
-    <p>Usuario: <?php echo $usuario; ?></p> <!-- Nuevo: Mostrar el usuario -->
-    <p>Email: <?php echo $email; ?></p> <!-- Nuevo: Mostrar el usuario -->
+    <p>Usuario: <?php echo $usuario; ?></p>
+    <p>Email: <?php echo $email; ?></p> 
     <p>Fecha de Creación: <?php echo $fecha_creacion; ?></p>
     <p>Código QR:</p>
     <div id="qrcode"></div>
