@@ -61,7 +61,7 @@
         </div>
 <!-- Registration End -->
 
-        <?php
+<?php
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -78,11 +78,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $contraseña_hash = $fila['contraseña'];
 
         if (password_verify($contraseña, $contraseña_hash)) {
-            // Establecer variables de sesión
             $_SESSION['usuario'] = $usuario;
             $_SESSION['email'] = $fila['email'];
             
-            header("Location: index.php");
+            // Obtener el rol del usuario
+            $rol = $fila['rol'];
+
+            // Redirigir dependiendo del rol
+            if ($rol == 'admin') {
+                header("Location: index_admin.php");
+            } else {
+                header("Location: index.php");
+            }
             exit();
         } else {
             echo "<script>alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');</script>";

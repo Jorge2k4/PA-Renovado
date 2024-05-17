@@ -97,7 +97,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                            <a class="dropdown-item" href="#">Ver Reservas</a>
+                            <a class="dropdown-item" href="pasajes/reservas_usuario.php">Ver Reservas</a>
                         </div>
                     </div>
                     <?php
@@ -206,6 +206,7 @@
                             </div>
                             <br>
                             <div class="text-center">
+                            <a href="pasajes/pagos.php" class="btn btn-primary btn-block py-2">ticket</a>
                                 <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Comprar</button>
                             </div>
                         </form>
