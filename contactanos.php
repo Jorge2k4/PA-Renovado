@@ -136,8 +136,7 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-white" style="padding: 30px;">
                         <div id="success"></div>
-                        <!-- FORMULARIO DE ENVIO DEL MENSAJE -->
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post" action="contact.php">
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post">
                             <div class="form-row">
                                 <!-- AQUI VA EL NOMBRE DE LA PERSONA -->
                                 <div class="control-group col-sm-6">

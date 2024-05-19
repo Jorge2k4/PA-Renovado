@@ -82,13 +82,9 @@ document.getElementById('cvv').addEventListener('input', function (e) {
 });
 
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
-    
-    // Generar un token único
+    event.preventDefault(); 
     const token = uuid.v4();
     console.log('Token generado:', token);
-
-    // Enviar el token al servidor para guardarlo en la base de datos
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'guardar_qr.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -97,8 +93,6 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
             if (xhr.status === 200) {
                 console.log('Código QR guardado en la base de datos.');
                 alert('Código QR guardado en la base de datos.');
-
-                // Redirige a la página de confirmación
                 window.location.href = 'confirmacion_pagos.html';
             } else {
                 console.error('Error al guardar el código QR en la base de datos.');
@@ -123,17 +117,28 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
+    const usuario = "<?php echo $usuario; ?>";
+    const email = "<?php echo $email; ?>";
+
     doc.setFontSize(18);
-    doc.text('Código QR', 10, 10);
-    doc.addImage(imgData, 'PNG', 10, 20, 50, 50);
+    doc.text('Pasaje de Abordaje', 10, 10);
     doc.setFontSize(12);
-    doc.text('Token:', 10, 80);
-    doc.text(token, 10, 90);
-    doc.text('Fecha de Generación:', 10, 100);
-    doc.text(new Date().toLocaleString(), 10, 110);
+    doc.text('Fecha de Generación:', 10, 30);
+    doc.text(new Date().toLocaleString(), 10, 40);
+    doc.text('Usuario:', 10, 50);
+    doc.text(usuario, 10, 60);
+    doc.text('Correo Electrónico:', 10, 70);
+    doc.text(email, 10, 80); 
+    const pageWidth = doc.internal.pageSize.width;
+    const qrImageWidth = 50;
+    const qrXPosition = (pageWidth - qrImageWidth) / 2;
+
+    doc.addImage(imgData, 'PNG', qrXPosition, 110, qrImageWidth, qrImageWidth);
+
     doc.save('Codigo_QR.pdf');
 });
 </script>
+
 
 </body>
 </html>
