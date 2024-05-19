@@ -7,13 +7,7 @@
     if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
         // Si hay una sesión activa, mostrar el nombre de usuario y el email
         $usuario = $_SESSION['usuario'];
-        $email = $_SESSION['email'];
-    ?>
-    <?php
-    } else {
-        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
-        echo "<a href='registro.php'>Iniciar Sesión</a>";
-    }
+        $email = $_SESSION['email'];}
     ?>
 
     <meta charset="utf-8">

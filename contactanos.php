@@ -6,13 +6,7 @@
     if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
         // Si hay una sesión activa, mostrar el nombre de usuario y el email
         $usuario = $_SESSION['usuario'];
-        $email = $_SESSION['email'];
-    ?>
-    <?php
-    } else {
-        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
-        echo "<a href='registro.php'>Iniciar Sesión</a>";
-    }
+        $email = $_SESSION['email'];}
     ?>
 <head>
     <meta charset="utf-8">
@@ -142,7 +136,7 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-white" style="padding: 30px;">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate" action="enviar_correo.php" method="post">
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post">
                             <div class="form-row">
                                 <!-- AQUI VA EL NOMBRE DE LA PERSONA -->
                                 <div class="control-group col-sm-6">
@@ -170,7 +164,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Enviar</button>
+                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton" name="enviar">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -180,6 +174,9 @@
     </div>
     <!-- Contact End -->
 
+    <?php 
+    include("contact.php");
+    ?>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">

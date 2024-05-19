@@ -741,6 +741,7 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  margin-right: auto;
   margin-left: auto;
 }
 
@@ -7726,7 +7727,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 1.5rem !important;
+  padding-top: 3rem !important;
 }
 
 .pr-5,
@@ -7736,7 +7737,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 2.5rem !important;
+  padding-bottom: 3rem !important;
 }
 
 .pl-5,
@@ -9403,7 +9404,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #7AB730 !important;
+  color: #7AB730!important;
 }
 
 a.text-primary:hover, a.text-primary:focus {

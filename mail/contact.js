@@ -6,7 +6,7 @@ $(function () {
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
-            var name = $("input#name").val();
+            var name = $("input#nombre").val();
             var email = $("input#correo").val();
             var subject = $("input#asunto").val();
             var message = $("textarea#msg").val();
@@ -16,7 +16,7 @@ $(function () {
 
             $.ajax({
                 url: "contact.php",
-                type: "POST",
+                type: "post",
                 data: {
                     name: name,
                     email: email,

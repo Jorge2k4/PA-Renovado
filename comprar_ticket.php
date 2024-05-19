@@ -6,13 +6,7 @@
     if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
         // Si hay una sesión activa, mostrar el nombre de usuario y el email
         $usuario = $_SESSION['usuario'];
-        $email = $_SESSION['email'];
-    ?>
-    <?php
-    } else {
-        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
-        echo "<a href='registro.php'>Iniciar Sesión</a>";
-    }
+        $email = $_SESSION['email'];}
     ?>
 <head>
     <meta charset="utf-8">
@@ -97,7 +91,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                            <a class="dropdown-item" href="pasajes/reservas_usuario.php">Ver Reservas</a>
+                            <a class="dropdown-item" href="#">Ver Reservas</a>
                         </div>
                     </div>
                     <?php
@@ -206,7 +200,7 @@
                             </div>
                             <br>
                             <div class="text-center">
-                            <a href="pasajes/pagos.php" class="btn btn-primary btn-block py-2">ticket</a>
+                                <a href="pasajes/pagos.php" class="btn btn-primary py-3 px-4">Ticket</a>
                                 <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Comprar</button>
                             </div>
                         </form>

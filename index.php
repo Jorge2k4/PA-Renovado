@@ -7,13 +7,7 @@
     if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
         // Si hay una sesión activa, mostrar el nombre de usuario y el email
         $usuario = $_SESSION['usuario'];
-        $email = $_SESSION['email'];
-    ?>
-    <?php
-    } else {
-        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
-        echo "<a href='registro.php'>Iniciar Sesión</a>";
-    }
+        $email = $_SESSION['email'];}
     ?>
 
     <meta charset="utf-8">
@@ -346,7 +340,7 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <h5 class="text-truncate">Giannlucas Tamayo</h5>
+                            <h5 class="text-truncate">Gabriel Sabatini</h5>
                             <p class="m-0">Conductor</p>
                         </div>
                     </div>
@@ -356,8 +350,8 @@
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
                             <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://www.facebook.com/fabio.vanegas.31?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://www.instagram.com/fabio_shit00?igsh=MXR0MjMycHU3bm55OA=="><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                         <div class="text-center py-4">
@@ -391,7 +385,7 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <h5 class="text-truncate">Gabriel Sabatini</h5>
+                            <h5 class="text-truncate">Jorge Meza</h5>
                             <p class="m-0">Conductor</p>
                         </div>
                     </div>

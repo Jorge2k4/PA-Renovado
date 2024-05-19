@@ -31,7 +31,7 @@
 <div class="container-fluid bg-registration py-5">
             <div class="container py-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-12">
                         <div class="card border-0">
                             <div class="card-header bg-primary text-center p-4">
                                 <h1 class="text-white m-0">Iniciar Sesion</h1>
@@ -61,7 +61,7 @@
         </div>
 <!-- Registration End -->
 
-<?php
+        <?php
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -78,13 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $contraseña_hash = $fila['contraseña'];
 
         if (password_verify($contraseña, $contraseña_hash)) {
+            // Establecer variables de sesión
             $_SESSION['usuario'] = $usuario;
             $_SESSION['email'] = $fila['email'];
             
-            $rol = $fila['rol'];
-            if ($rol == 'admin') {
+            $rol = $fila["rol"];
+            if($rol == "admin"){
                 header("Location: index_admin.php");
-            } else {
+            }else{
                 header("Location: index.php");
             }
             exit();

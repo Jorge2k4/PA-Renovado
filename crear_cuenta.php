@@ -32,7 +32,7 @@
 <div class="container-fluid bg-registration py-5">
             <div class="container py-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-12">
                         <div class="card border-0">
                             <div class="card-header bg-primary text-center p-4">
                                 <h1 class="text-white m-0">Crear nueva cuenta</h1>
@@ -41,15 +41,15 @@
                                 <form method="post">
                                 <div class="form-group">
                                     <label for="usuario" class="form-label">Usuario:</label>
-                                    <input type="text" class="form-control p-3" id="usuario" name="usuario"> 
+                                    <input type="text" class="form-control p-3" id="usuario" name="usuario" placeholder="Usuario"> 
                                 </div>
                                     <div class="form-group">
                                         <label for="contraseña" class="form-label">Contraseña:</label>
-                                        <input type="password" class="form-control p-3" id="contraseña" name="contraseña">
+                                        <input type="password" class="form-control p-3" id="contraseña" name="contraseña" placeholder="Contraseña">
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="form-label">Email:</label>
-                                        <input type="text" class="form-control p-3" id="email" name="email">
+                                        <input type="text" class="form-control p-3" id="email" name="email" placeholder="Email">
                                         </div>
                                     <div>
                                         <br>

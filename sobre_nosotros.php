@@ -6,13 +6,7 @@
     if (isset($_SESSION['usuario']) && isset($_SESSION['email'])) {
         // Si hay una sesión activa, mostrar el nombre de usuario y el email
         $usuario = $_SESSION['usuario'];
-        $email = $_SESSION['email'];
-    ?>
-    <?php
-    } else {
-        // Si no hay una sesión activa, mostrar el enlace de inicio de sesión
-        echo "<a href='registro.php'>Iniciar Sesión</a>";
-    }
+        $email = $_SESSION['email'];}
     ?>
 <head>
     <meta charset="utf-8">
@@ -207,57 +201,6 @@
     </div>
     <!-- Feature End -->
 
-
-    <!-- Registration Start -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Oferta fija</h6>
-                        <h1 class="text-white"><span class="text-primary">20% De Descuento</span> Por Tu Primer Registro</h1>
-                    </div>
-                    <p class="text-white">Si es la primera vez que usaras nuestros servicios registrate para obtener el 10% de descuento a la hora de comprar tu primer ticket</p>
-                    <ul class="list-inline text-white m-0">
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Ahorras dinero</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Obtines una cuenta en nuestra pagina</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-primary text-center p-4">
-                            <h1 class="text-white m-0">Registrate Ahora</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-white p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Nombre" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Correo" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destinos</option>
-                                        <option value="1">La Perimetral</option>
-                                        <option value="2">La Bocana</option>
-                                        <option value="3">La Boquilla</option>
-                                        <option value="4">Las Americas</option>
-                                        <option value="5">Bahia De Manga</option>
-                                        <option value="6">Bahia de Bocagrande</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block py-3" type="submit">Registrarse</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Registration End -->
 
 
     <!-- Team Start -->
