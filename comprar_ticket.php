@@ -140,8 +140,10 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Nombre Completo"
-                                        required="required" data-validation-required-message="Por favor ingrese su nombre" />
+                               <input type="text" class="form-control p-4" id="name" placeholder="Nombre Completo" 
+                               required="required" data-validation-required-message="Por favor ingrese su nombre" 
+                               value="<?php echo isset($usuario) ? $usuario : ''; ?>" />
+
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-md-6">
@@ -161,15 +163,20 @@
                                     </div>
                                 </div>
                                 <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Correo"
-                                        required="required" data-validation-required-message="Por favor ingrese su correo" />
-                                    <p class="help-block text-danger"></p>
+                                <input type="email" class="form-control p-4" id="email" 
+                                placeholder="Correo" required="required" data-validation-required-message=
+                                "Por favor ingrese su correo" value="<?php echo isset($email) ? $email : ''; ?>" />
+
+                                </div>
+                                <div> 
+
+                                
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3 mb-md-0">
                                         <select class="custom-select px-4" style="height: 47px;" required>
                                             <option selected>Metodo de Pago</option>
-                                            <option value="Paypal">Paypal</option>
+                                            <option value="Paypal">Tarjeta Debito/Credito</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor, selecciona un metodo de pago.
@@ -200,8 +207,7 @@
                             </div>
                             <br>
                             <div class="text-center">
-                                <a href="pasajes/pagos.php" class="btn btn-primary py-3 px-4">Ticket</a>
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Comprar</button>
+                                <a href="pasajes/pagos.php" class="btn btn-primary py-3 px-4">Comprar</a>
                             </div>
                         </form>
                     </div>
@@ -210,7 +216,6 @@
         </div>
     </div>
     <!--Reserva Final-->
-
 
     <!-- Service Start -->
     <div class="container-fluid py-5">

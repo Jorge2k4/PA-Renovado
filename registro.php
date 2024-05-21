@@ -78,7 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $contraseña_hash = $fila['contraseña'];
 
         if (password_verify($contraseña, $contraseña_hash)) {
-            // Establecer variables de sesión
             $_SESSION['usuario'] = $usuario;
             $_SESSION['email'] = $fila['email'];
             
