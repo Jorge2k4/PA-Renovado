@@ -42,7 +42,7 @@
                     <div class="d-inline-flex align-items-center">
                         <p><i class="fa fa-envelope mr-2"></i>marinaexpressoficial@gmail.com</p>
                         <p class="text-body px-3">|</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3146493161</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3016533646</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
@@ -91,7 +91,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                            <a class="dropdown-item" href="#">Ver Reservas</a>
+                            <a class="dropdown-item" href="/pasajes/reservas_usuario.php">Ver Reservas</a>
                         </div>
                     </div>
                     <?php
@@ -140,9 +140,9 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
-                               <input type="text" class="form-control p-4" id="name" placeholder="Nombre Completo" 
-                               required="required" data-validation-required-message="Por favor ingrese su nombre" 
-                               value="<?php echo isset($usuario) ? $usuario : ''; ?>" />
+                                <input type="text" class="form-control p-4" id="name" placeholder="Nombre Completo" 
+                                required="required" data-validation-required-message="Por favor ingrese su nombre" 
+                                value="<?php echo isset($usuario) ? $usuario : ''; ?>" />
 
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -163,17 +163,12 @@
                                     </div>
                                 </div>
                                 <div class="control-group col-sm-6">
-                                <input type="email" class="form-control p-4" id="email" 
-                                placeholder="Correo" required="required" data-validation-required-message=
-                                "Por favor ingrese su correo" value="<?php echo isset($email) ? $email : ''; ?>" />
-
-                                </div>
-                                <div> 
-
-                                
+                                    <input type="email" class="form-control p-4" id="email" 
+                                    placeholder="Correo" required="required" data-validation-required-message=
+                                    "Por favor ingrese su correo" value="<?php echo isset($email) ? $email : ''; ?>" />
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-3 mb-md-0">
+                                    <div class="mb-3 mb-md-12">
                                         <select class="custom-select px-4" style="height: 47px;" required>
                                             <option selected>Metodo de Pago</option>
                                             <option value="Paypal">Tarjeta Debito/Credito</option>
@@ -315,17 +310,6 @@
                     <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="sobre_nosotros.php"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
-                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
-                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
-                    <a class="text-white-50 mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
-                    <a class="text-white-50" href="index.php"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

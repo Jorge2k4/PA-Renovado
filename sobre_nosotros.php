@@ -42,7 +42,7 @@
                     <div class="d-inline-flex align-items-center">
                         <p><i class="fa fa-envelope mr-2"></i>marinaexpressoficial@gmail.com</p>
                         <p class="text-body px-3">|</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3146493161</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+57 3016533646</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
@@ -93,7 +93,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                            <a class="dropdown-item" href="#">Ver Reservas</a>
+                            <a class="dropdown-item" href="/pasajes/reservas_usuario.php">Ver Reservas</a>
                         </div>
                     </div>
                     <?php

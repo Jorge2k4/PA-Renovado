@@ -91,7 +91,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="registro.php">Cerrar Sesión</a>
-                                <a class="dropdown-item" href="#">Ver Reservas</a>
+                                <a class="dropdown-item" href="/pasajes/reservas_usuario.php">Ver Reservas</a>
                             </div>
                         </div>
                         <?php
@@ -139,32 +139,24 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post">
                             <div class="form-row">
                                 <!-- AQUI VA EL NOMBRE DE LA PERSONA -->
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" name="nombre" placeholder="Nombre"
-                                        required/>
+                                <div class="control-group col-sm-12">
+                                    <label for="">Nombre:</label>
+                                    <input type="text" class="form-control p-4" id="name" placeholder="Nombre Completo" 
+                                    required="required" data-validation-required-message="Por favor ingrese su nombre" 
+                                    value="<?php echo isset($usuario) ? $usuario : ''; ?>" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <!-- AQUI VA EL CORREO DE LA PERSONA -->
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="correo" name="correo" placeholder="Correo"
-                                        required/>
+                                <div class="control-group col-sm-12">
+                                    <label for="">Correo: </label>
+                                    <input type="email" class="form-control p-4" id="email" 
+                                    placeholder="Correo" required="required" data-validation-required-message=
+                                    "Por favor ingrese su correo" value="<?php echo isset($email) ? $email : ''; ?>" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <!-- AQUI VA EL ASUNTO DE LA PERSONA -->
-                                <input type="text" class="form-control p-4" id="asunto" name="asunto" placeholder="Asunto"
-                                    required/>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <!-- AQUI VA EL MENSAJE DE LA PERSONA -->
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" name="msg" placeholder="Mensaje"
-                                    required></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
                             <div class="text-center">
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton" name="enviar">Enviar</button>
+                                <a class="btn btn-primary py-3 px-5" href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWtDvfCZmWcpgDLlTDBxjDVdxJRRMQXQdtBLNGZddczRBmfJltljsbLPDGgMbqCPrzJXwJkjV">Enviar</a>
                             </div>
                         </form>
                     </div>
@@ -200,17 +192,6 @@
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Conductores</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
-                    <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Nuestros Servicios</h5>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destinos</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Desarrolladores</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Testimonios</a>
                     <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
                 </div>

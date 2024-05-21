@@ -54,6 +54,7 @@
                                     <div>
                                         <br>
                                         <input class="btn btn-primary btn-block py-3" type="submit" class="btn" name="registrarse" value="Crear cuenta">
+                                        <a href="registro.php" class="btn-block py-1">Para iniciar sesion dar click aqui</a>
                                     </div>
                                 </form>
                             </div>
